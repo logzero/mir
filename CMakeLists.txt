@@ -3,7 +3,7 @@
 project ("MIR")
 
 add_library(mir STATIC mir.c "mir.h")
-add_library(mir_gen STATIC mir-gen.c mman.c "mir.h")
+add_library(mir_gen STATIC mir-gen.c "mir.h")
 add_library(llvm2mir STATIC llvm2mir/llvm2mir.c)
 
 add_executable (c2m "c2mir/c2mir.c" "c2mir/c2mir.h" "c2mir/c2mir-driver.c" "mir-gen.h")
@@ -26,11 +26,3 @@ add_executable (b2ctab "mir-utils/b2ctab.c")
 target_include_directories(b2ctab PRIVATE ./)
 target_link_libraries(b2ctab mir)
 
-# TODO: Add tests and install targets if needed.
-
-#mir.o: mir.c $(MIR_DEPS)
-#	$(CC) -c $(CFLAGS) -o $@ $<
-#mir-gen.o: mir-gen.c $(MIR_GEN_DEPS)
-#	$(CC) -c $(CFLAGS) -D$(TARGET) -o $@ $<
-#c2m: mir.o mir-gen.o c2mir/c2mir.h c2mir/c2mir.c c2mir/c2mir-driver.c
-#	$(CC) $(CFLAGS) -D$(TARGET) -I. mir-gen.o c2mir/c2mir.c c2mir/c2mir-driver.c mir.o -ldl -o $@
