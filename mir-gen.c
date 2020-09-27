@@ -5522,8 +5522,13 @@ static void dead_code_elimination (gen_ctx_t gen_ctx) {
 
 #if !MIR_NO_GEN_DEBUG
 
+#ifndef _WIN32
 #include <sys/types.h>
 #include <unistd.h>
+#else
+#include <processthreadsapi.h>
+#define getpid GetCurrentProcessId
+#endif
 
 static void print_code (gen_ctx_t gen_ctx, uint8_t *code, size_t code_len, void *start_addr) {
   size_t i;
