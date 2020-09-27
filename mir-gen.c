@@ -5526,7 +5526,8 @@ static void dead_code_elimination (gen_ctx_t gen_ctx) {
 #include <sys/types.h>
 #include <unistd.h>
 #else
-#include <processthreadsapi.h>
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 #define getpid GetCurrentProcessId
 #endif
 
