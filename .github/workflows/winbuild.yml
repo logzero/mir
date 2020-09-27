@@ -1,0 +1,19 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+
+    strategy:
+      matrix:
+        os: [windows-latest]
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: cmake
+      shell: powershell
+      run: |
+        cmake -G 'Visual Studio 16 2019' -A x64
+        cmake --build . --target c2m
