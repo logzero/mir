@@ -128,7 +128,7 @@ add_test(interp-test16 run_test -i mir-tests/test16.mir)
 
 add_test(mir-test mir_test)
 add_test(scan-test scan_test)
-add_test(io-test io_test)
+#add_test(io-test io_test)
 add_test(loop-test gen_loop)
 add_test(sieve-test gen_sieve)
 
