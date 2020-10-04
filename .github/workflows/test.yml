@@ -15,7 +15,7 @@ jobs:
     - name: make test
       if: runner.os != 'Windows'
       run: make test
-    - name cmake test
+    - name: cmake test
       if: runner.os == 'Windows'
       run: |
         cmake -G 'Visual Studio 16 2019' -A x64 -DBUILD_TESTS=ON
