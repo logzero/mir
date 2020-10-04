@@ -7,7 +7,11 @@
 #endif
 
 #include <inttypes.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#else
+#define sbrk(a) (a)
+#endif
 
 #ifndef TEST_GEN_DEBUG
 #define TEST_GEN_DEBUG 0
