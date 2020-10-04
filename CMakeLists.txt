@@ -69,7 +69,7 @@ target_link_libraries(interp_args mir)
 
 add_executable (interp_args_c "mir-tests/args-interp.c")
 target_include_directories(interp_args_c PRIVATE ./)
-target_compile_definitions(interp_args_c MIR_C_INTERFACE=1)
+target_compile_definitions(interp_args_c PRIVATE MIR_C_INTERFACE=1)
 target_link_libraries(interp_args_c mir)
 
 add_executable (mir_test "mir-tests/simplify.c")
