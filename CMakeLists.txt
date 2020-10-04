@@ -108,6 +108,21 @@ add_executable (run_test "mir-tests/run-test.c")
 target_include_directories(run_test PRIVATE ./)
 target_link_libraries(run_test mir mir_gen)
 
+add_executable (varr_test "adt-tests/mir-varr-test.c")
+target_include_directories(varr_test PRIVATE ./)
+
+add_executable (dlist_test "adt-tests/mir-dlist-test.c")
+target_include_directories(dlist_test PRIVATE ./)
+
+add_executable (bitmap_test "adt-tests/mir-bitmap-test.c")
+target_include_directories(bitmap_test PRIVATE ./)
+
+add_executable (htab_test "adt-tests/mir-htab-test.c")
+target_include_directories(htab_test PRIVATE ./)
+
+add_executable (reduce_test "adt-tests/mir-reduce-test.c")
+target_include_directories(reduce_test PRIVATE ./)
+
 add_test(interp-test1 interp_loop)
 add_test(interp-test2 interp_loop_c)
 add_test(interp-test3 interp_sieve)
@@ -148,5 +163,11 @@ add_test(gen-test13 run_test ./mir-tests/test13.mir)
 add_test(gen-test14 run_test ./mir-tests/test14.mir)
 add_test(gen-test15 run_test ./mir-tests/test15.mir)
 add_test(gen-test16 run_test ./mir-tests/test16.mir)
+
+add_test(varr-test varr_test)
+add_test(dlist-test dlist_test)
+add_test(bitmap-test bitmap_test)
+add_test(htab-test htab_test)
+add_test(reduce-test reduce_test)
 
 endif()
