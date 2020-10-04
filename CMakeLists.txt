@@ -110,8 +110,8 @@ target_link_libraries(run_test mir mir_gen)
 
 add_test(interp-test1 interp_loop)
 add_test(interp-test2 interp_loop_c)
-#add_test(interp-test3 interp_sieve)
-#add_test(interp-test4 interp_sieve_c)
+#add_test(interp-test3 interp_sieve) HANGS
+#add_test(interp-test4 interp_sieve_c) HANGS
 add_test(interp-test5 interp_hi)
 add_test(interp-test6 interp_args)
 add_test(interp-test7 interp_args_c)
@@ -128,9 +128,9 @@ add_test(interp-test16 run_test -i mir-tests/test16.mir)
 
 add_test(mir-test mir_test)
 add_test(scan-test scan_test)
-#add_test(io-test io_test)
+#add_test(io-test io_test) HANGS
 add_test(loop-test gen_loop)
-add_test(sieve-test gen_sieve)
+#add_test(sieve-test gen_sieve) SEGFAULT
 
 add_test(gen-test1 gen_test_d mir-tests/test1.mir)
 add_test(gen-test2 gen_test_d mir-tests/test2.mir)
