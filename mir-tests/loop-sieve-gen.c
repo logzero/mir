@@ -7,7 +7,7 @@
 #endif
 
 #include <inttypes.h>
-#ifndef _MSC_VER
+#ifndef _WIN32
 #include <unistd.h>
 #else
 #define sbrk(a) (a)
