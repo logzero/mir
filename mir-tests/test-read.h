@@ -11,7 +11,7 @@ static char *read_file (const char *name) {
   len = ftell (f);
   rewind (f);
   str = (char *) malloc (len + 1);
-  rlen = fread (str, 1, len, f)
+  rlen = fread (str, 1, len, f);
 #ifndef _MSC_VER
   if (rlen != len) {
     fprintf (stderr, "file %s was changed\n", name);
